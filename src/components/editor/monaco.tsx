@@ -14,7 +14,7 @@ export default function Monaco(props: any) {
         setCode(newValue);
     }
     const onMounted = (editor: any, monaco: any) => {
-        console.log('editorDidMount', editor);
+        console.log('language', props.language);
         editor.focus();
     }
     const size = useWindowSize()

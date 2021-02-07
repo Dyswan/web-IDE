@@ -1,14 +1,10 @@
 import React from 'react';
 import './App.css';
-import Monaco from './components/editor/monaco'
-import MyTerminal from './components/terminal/terminal';
-import { Button, Row, Col } from 'antd';
+import CommunityEdition from './pages/community_edition'
 function App() {
   return (
     <div className="App">
-      <Monaco language="java"></Monaco>
-      <Button>运行</Button>
-      {/* <MyTerminal container_id="test"></MyTerminal> */}
+      <CommunityEdition></CommunityEdition>
     </div>
   );
 }
