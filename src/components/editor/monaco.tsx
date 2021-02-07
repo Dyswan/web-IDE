@@ -5,13 +5,12 @@ import MonacoEditor from 'react-monaco-editor';
 
 
 export default function Monaco(props: any) {
-    const [code, setCode] = useState('')
+    
     const options = {
         selectOnLineNumbers: true
     };
     const onChange = (newValue: string, e: any) => {
-        console.log('onChange', newValue, e);
-        setCode(newValue);
+        props.setCode(newValue);
     }
     const onMounted = (editor: any, monaco: any) => {
         console.log('language', props.language);
@@ -25,7 +24,7 @@ export default function Monaco(props: any) {
                 height={size.innerHeight*0.65}
                 language={props.language}
                 theme="vs-dark"
-                value={code}
+                value={props.code}
                 options={options}
                 onChange={onChange}
                 editorDidMount={onMounted}
