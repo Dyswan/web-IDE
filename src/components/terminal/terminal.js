@@ -47,7 +47,7 @@ class MyTerminal extends React.Component{
         console.log("mounted is going on");
         var __this = this;
         this.term.onData(function(key){
-            if(__this.closed == true){
+            if(__this.closed === true){
                 __this.term.writeln("");
                 __this.term.writeln("Terminl reconnected");
                 __this.term.writeln("");

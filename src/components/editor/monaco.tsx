@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import useWindowSize from '../../hooks/windowSize';
 
 import MonacoEditor from 'react-monaco-editor';
 
@@ -17,17 +17,19 @@ export default function Monaco(props: any) {
         console.log('editorDidMount', editor);
         editor.focus();
     }
-
+    const size = useWindowSize()
     return (
-        <MonacoEditor
-            // width="800"
-            height="700"
-            language={props.language}
-            theme="vs-dark"
-            value={code}
-            options={options}
-            onChange={onChange}
-            editorDidMount={onMounted}
-        />
+        <div>
+            <MonacoEditor
+                width={size.innerWidth}
+                height={size.innerHeight*0.65}
+                language={props.language}
+                theme="vs-dark"
+                value={code}
+                options={options}
+                onChange={onChange}
+                editorDidMount={onMounted}
+            />
+        </div>
     );
 }
