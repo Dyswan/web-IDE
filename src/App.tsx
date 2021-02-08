@@ -1,12 +1,10 @@
 import React from 'react';
 import './App.css';
-import Monaco from './components/editor/monaco'
-import MyTerminal from './components/terminal/terminal';
+import CommunityEdition from './pages/community_edition'
 function App() {
   return (
     <div className="App">
-      <Monaco language="java"></Monaco>
-      <MyTerminal container_id="test"></MyTerminal>
+      <CommunityEdition></CommunityEdition>
     </div>
   );
 }
